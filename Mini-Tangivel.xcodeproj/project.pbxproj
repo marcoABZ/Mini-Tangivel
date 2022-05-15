@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA30D32A28314E5F00EA2BAF /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D32928314E5F00EA2BAF /* Players.swift */; };
+		FA30D32F2831697F00EA2BAF /* ConnectFourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D32E2831697F00EA2BAF /* ConnectFourViewModel.swift */; };
+		FA30D33128317A1A00EA2BAF /* ConnectFourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D33028317A1A00EA2BAF /* ConnectFourView.swift */; };
+		FA33040D282EA9ED0022F634 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33040C282EA9ED0022F634 /* State.swift */; };
+		FA330411282EB11F0022F634 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA330410282EB11F0022F634 /* Action.swift */; };
 		FA616D01282DB43A00EB3B62 /* Mini_TangivelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D00282DB43A00EB3B62 /* Mini_TangivelApp.swift */; };
 		FA616D03282DB43A00EB3B62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D02282DB43A00EB3B62 /* ContentView.swift */; };
 		FA616D05282DB43B00EB3B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA616D04282DB43B00EB3B62 /* Assets.xcassets */; };
 		FA616D08282DB43B00EB3B62 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA616D07282DB43B00EB3B62 /* Preview Assets.xcassets */; };
+		FA616D10282DB46000EB3B62 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D0F282DB46000EB3B62 /* GameProtocol.swift */; };
+		FA616D12282DB56500EB3B62 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D11282DB56500EB3B62 /* Game.swift */; };
+		FA616D14282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA30D32928314E5F00EA2BAF /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		FA30D32E2831697F00EA2BAF /* ConnectFourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourViewModel.swift; sourceTree = "<group>"; };
+		FA30D33028317A1A00EA2BAF /* ConnectFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourView.swift; sourceTree = "<group>"; };
+		FA33040C282EA9ED0022F634 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		FA330410282EB11F0022F634 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		FA616CFD282DB43A00EB3B62 /* Mini-Tangivel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini-Tangivel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA616D00282DB43A00EB3B62 /* Mini_TangivelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini_TangivelApp.swift; sourceTree = "<group>"; };
 		FA616D02282DB43A00EB3B62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA616D04282DB43B00EB3B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA616D07282DB43B00EB3B62 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA616D0F282DB46000EB3B62 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		FA616D11282DB56500EB3B62 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAlphaBetaPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +48,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA30D32C2831695600EA2BAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA30D32E2831697F00EA2BAF /* ConnectFourViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA30D32D2831696100EA2BAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA30D33028317A1A00EA2BAF /* ConnectFourView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA330412282EB1230022F634 /* ConnectFour */ = {
+			isa = PBXGroup;
+			children = (
+				FA616D11282DB56500EB3B62 /* Game.swift */,
+				FA330410282EB11F0022F634 /* Action.swift */,
+				FA33040C282EA9ED0022F634 /* State.swift */,
+				FA30D32928314E5F00EA2BAF /* Players.swift */,
+			);
+			path = ConnectFour;
+			sourceTree = "<group>";
+		};
 		FA616CF4282DB43A00EB3B62 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +94,9 @@
 		FA616CFF282DB43A00EB3B62 /* Mini-Tangivel */ = {
 			isa = PBXGroup;
 			children = (
+				FA616D0E282DB44E00EB3B62 /* Model */,
+				FA30D32D2831696100EA2BAF /* View */,
+				FA30D32C2831695600EA2BAF /* ViewModel */,
 				FA616D00282DB43A00EB3B62 /* Mini_TangivelApp.swift */,
 				FA616D02282DB43A00EB3B62 /* ContentView.swift */,
 				FA616D04282DB43B00EB3B62 /* Assets.xcassets */,
@@ -65,6 +111,16 @@
 				FA616D07282DB43B00EB3B62 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA616D0E282DB44E00EB3B62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA330412282EB1230022F634 /* ConnectFour */,
+				FA616D0F282DB46000EB3B62 /* GameProtocol.swift */,
+				FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA330411282EB11F0022F634 /* Action.swift in Sources */,
+				FA33040D282EA9ED0022F634 /* State.swift in Sources */,
+				FA616D12282DB56500EB3B62 /* Game.swift in Sources */,
+				FA616D10282DB46000EB3B62 /* GameProtocol.swift in Sources */,
 				FA616D03282DB43A00EB3B62 /* ContentView.swift in Sources */,
+				FA616D14282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift in Sources */,
+				FA30D32F2831697F00EA2BAF /* ConnectFourViewModel.swift in Sources */,
 				FA616D01282DB43A00EB3B62 /* Mini_TangivelApp.swift in Sources */,
+				FA30D32A28314E5F00EA2BAF /* Players.swift in Sources */,
+				FA30D33128317A1A00EA2BAF /* ConnectFourView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
