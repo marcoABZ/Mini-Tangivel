@@ -12,7 +12,6 @@ protocol GameProtocol {
     associatedtype Action: GameAction
     var initial_state: State { get }
     
-    func player(state: State) -> Int
     func getPossibleActions(at state: State) -> [Action]
     func perform(action: Action, at state: State) -> State
     func isGameOver(state: State) -> Bool
@@ -23,7 +22,7 @@ protocol GameState {
 }
 
 protocol ConnectFourPlayer {
-    mutating func getAction(at state: ConnectFour.State) -> ConnectFour.Action
+    mutating func selectAction(at state: ConnectFourState, from possible_actions: [ConnectFourAction]) -> ConnectFourAction
 }
 
 protocol RealPlayer {}

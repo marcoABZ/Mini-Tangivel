@@ -10,6 +10,8 @@
 		FA30D32A28314E5F00EA2BAF /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D32928314E5F00EA2BAF /* Players.swift */; };
 		FA30D32F2831697F00EA2BAF /* ConnectFourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D32E2831697F00EA2BAF /* ConnectFourViewModel.swift */; };
 		FA30D33128317A1A00EA2BAF /* ConnectFourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D33028317A1A00EA2BAF /* ConnectFourView.swift */; };
+		FA30D3332831C56D00EA2BAF /* ConnectFourGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D3322831C56D00EA2BAF /* ConnectFourGridView.swift */; };
+		FA30D3352831C5E200EA2BAF /* ConnectFourCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D3342831C5E200EA2BAF /* ConnectFourCellView.swift */; };
 		FA33040D282EA9ED0022F634 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33040C282EA9ED0022F634 /* State.swift */; };
 		FA330411282EB11F0022F634 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA330410282EB11F0022F634 /* Action.swift */; };
 		FA616D01282DB43A00EB3B62 /* Mini_TangivelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D00282DB43A00EB3B62 /* Mini_TangivelApp.swift */; };
@@ -25,6 +27,8 @@
 		FA30D32928314E5F00EA2BAF /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		FA30D32E2831697F00EA2BAF /* ConnectFourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourViewModel.swift; sourceTree = "<group>"; };
 		FA30D33028317A1A00EA2BAF /* ConnectFourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourView.swift; sourceTree = "<group>"; };
+		FA30D3322831C56D00EA2BAF /* ConnectFourGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourGridView.swift; sourceTree = "<group>"; };
+		FA30D3342831C5E200EA2BAF /* ConnectFourCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourCellView.swift; sourceTree = "<group>"; };
 		FA33040C282EA9ED0022F634 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		FA330410282EB11F0022F634 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		FA616CFD282DB43A00EB3B62 /* Mini-Tangivel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini-Tangivel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				FA30D33028317A1A00EA2BAF /* ConnectFourView.swift */,
+				FA30D3322831C56D00EA2BAF /* ConnectFourGridView.swift */,
+				FA30D3342831C5E200EA2BAF /* ConnectFourCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,7 +200,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA330411282EB11F0022F634 /* Action.swift in Sources */,
+				FA30D3352831C5E200EA2BAF /* ConnectFourCellView.swift in Sources */,
 				FA33040D282EA9ED0022F634 /* State.swift in Sources */,
+				FA30D3332831C56D00EA2BAF /* ConnectFourGridView.swift in Sources */,
 				FA616D12282DB56500EB3B62 /* Game.swift in Sources */,
 				FA616D10282DB46000EB3B62 /* GameProtocol.swift in Sources */,
 				FA616D03282DB43A00EB3B62 /* ContentView.swift in Sources */,

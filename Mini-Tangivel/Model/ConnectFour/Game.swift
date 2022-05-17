@@ -18,17 +18,12 @@ struct ConnectFour: GameProtocol {
         return State(width: board_width, height: board_height)
     }
     
-    func player(state: State) -> Int {
-        if state.move_count % 2 == 0 { return 1 }
-            return 2
-    }
-    
     func getPossibleActions(at state: State) -> [ConnectFour.Action] {
-        return state.getNotFilledRowsIndexes().map { Action(player: nil, column: $0) }
+        return state.getNotFilledRowsIndexes().map { Action(column: $0) }
     }
     
     func perform(action: Action, at state: State) -> State {
-        return state.dropPiece(at: action.column, player: action.player ?? 1)
+        return state.dropPiece(at: action.column)
     }
     
     func isGameOver(state: State) -> Bool {

@@ -9,24 +9,20 @@ import SwiftUI
 
 class ConnectFourViewModel: ObservableObject {
     
-    @Published var game: ConnectFour
+    private var game: ConnectFour
     private var player_1: ConnectFourPlayer
     private var player_2: ConnectFourPlayer
+    private var next_player: ConnectFourPlayer
     
     @Published private(set) var currentGameState: ConnectFourState {
         didSet {
-            if game.player(state: currentGameState) == 1 {
-                if var player = player_1 as? AlphaBetaConnectFourPlayer {
-                    perform(action: player.getAction(at: currentGameState))
+            if !currentGameState.is_over {
+                if var player = next_player as? AlphaBetaConnectFourPlayer {
+                    let possible_actions = game.getPossibleActions(at: currentGameState)
+                    let selected_action = player.selectAction(at: currentGameState, from: possible_actions)
+                    next_player = currentGameState.move_count % 2 == 0 ? player_2 : player_1
+                    currentGameState = game.perform(action: selected_action, at: currentGameState)
                 }
-            }
-            if game.player(state: currentGameState) == 2 {
-                if var player = player_2 as? AlphaBetaConnectFourPlayer {
-                    perform(action: player.getAction(at: currentGameState))
-                }
-            }
-            if game.isGameOver(state: currentGameState) {
-                resetGame()
             }
         }
     }
@@ -36,30 +32,34 @@ class ConnectFourViewModel: ObservableObject {
         self.currentGameState = game.initial_state
         self.player_1 = player_1
         self.player_2 = player_2
+        self.next_player = player_1
+    }
+    
+    func startGame() {
+        resetGame()
         
-        if var player = player_1 as? AlphaBetaConnectFourPlayer {
-            perform(action: player.getAction(at: currentGameState))
+        if var player = next_player as? AlphaBetaConnectFourPlayer {
+            let possible_actions = game.getPossibleActions(at: currentGameState)
+            let selected_action = player.selectAction(at: currentGameState, from: possible_actions)
+            next_player = currentGameState.move_count % 2 == 0 ? player_2 : player_1
+            currentGameState = game.perform(action: selected_action, at: currentGameState)
         }
     }
     
-    func perform(action: ConnectFourAction) {
-        let player = game.player(state: currentGameState) == 1 ? player_1 : player_2
-        var actionCopy = action
-        actionCopy.player = game.player(state: currentGameState) == 1 ? 1 : -1
+    func check(action: ConnectFourAction) {
+        guard let _ = next_player as? RealConnectFourPlayer else { return }
+        if currentGameState.is_over { return }
         
-        if let player = player as? RealConnectFourPlayer {
-            if player.check(action: action, at: currentGameState) {
-                currentGameState = game.perform(action: actionCopy, at: currentGameState)
-                return
-            }
+        let possible_actions = game.getPossibleActions(at: currentGameState)
+        if possible_actions.contains(action) {
+            next_player = currentGameState.move_count % 2 == 0 ? player_2 : player_1
+            currentGameState = game.perform(action: action, at: currentGameState)
         }
-        
-        currentGameState = game.perform(action: actionCopy, at: currentGameState)
-        return
     }
     
     func resetGame() {
         game = ConnectFour(board_width: 8, board_height: 8)
+        next_player = player_1
         currentGameState = game.initial_state
     }
 }

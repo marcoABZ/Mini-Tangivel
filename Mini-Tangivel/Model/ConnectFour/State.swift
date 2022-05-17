@@ -8,7 +8,7 @@
 import Foundation
 
 struct ConnectFourState: GameState, Hashable {
-    var hashableRepresentation: AnyHashable { self }
+    var hashableRepresentation: AnyHashable { self.grid }
     private(set) var grid: [[Int]]
     private(set) var move_count: Int = 0
     
@@ -38,6 +38,11 @@ struct ConnectFourState: GameState, Hashable {
         return false
     }
     
+    var winner: Int? {
+        if !self.is_over { return nil }
+        return move_count % 2 == 0 ? -1 : 1
+    }
+    
     init(width: Int, height: Int) {
         self.grid = []
         for _ in 0..<height {
@@ -49,8 +54,9 @@ struct ConnectFourState: GameState, Hashable {
         return Array(0 ..< grid_width).filter { grid[0][$0] == 0 }
     }
     
-    func dropPiece(at row: Int, player: Int) -> ConnectFourState {
+    func dropPiece(at row: Int) -> ConnectFourState {
         var copy = self
+        let player = move_count % 2 == 0 ? 1 : -1
         
         for i in Array(0..<grid.count).reversed() {
             if copy.grid[i][row] == 0 {

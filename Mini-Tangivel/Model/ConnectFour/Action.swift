@@ -8,6 +8,5 @@
 import Foundation
 
 struct ConnectFourAction: GameAction, Equatable {
-    var player: Int?
     let column: Int
 }

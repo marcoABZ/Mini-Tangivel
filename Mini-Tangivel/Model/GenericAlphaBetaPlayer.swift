@@ -14,8 +14,8 @@ struct AlphaBetaPlayer<G: GameProtocol> {
     private var transposition_table: [AnyHashable: Double]
     private var time_limit: TimeInterval
     private var heuristic: ((G.State) -> Double)
-    private var alpha: Double = Double.infinity
-    private var beta: Double = -Double.infinity
+    private var alpha: Double = -Double.infinity
+    private var beta: Double = Double.infinity
     private var start_time: Date = Date.now
     private var halt: Bool = false
     private var depth_limit: Double = 1
@@ -27,33 +27,32 @@ struct AlphaBetaPlayer<G: GameProtocol> {
         self.transposition_table = [:]
     }
     
-    
-    mutating func getAction(at state: G.State) -> G.Action {
-        let action = alphaBetaDecision(state)
-        return action
+    mutating func selectAction(at state: G.State, from possible_actions: [G.Action]) -> G.Action {
+        return alphaBetaDecision(state, possible_actions)
     }
 
-    mutating private func alphaBetaDecision(_ state: G.State) -> G.Action {
-        alpha = Double.infinity
-        beta = -Double.infinity
+    mutating private func alphaBetaDecision(_ state: G.State, _ possible_actions: [G.Action]) -> G.Action {
+        alpha = -Double.infinity
+        beta = Double.infinity
         start_time = Date.now
         halt = false
         depth_limit = 1
         
-        var possible_actions = game.getPossibleActions(at: state)
+        var sorted_actions = possible_actions
         
         while true {
-            let time_dif = start_time.distance(to: Date.now)
-            if (time_dif > time_limit) {
-                return possible_actions.first!
+            if halt {
+                print("Depth \(depth_limit)")
+                return sorted_actions.first!
             }
             
-            let values = possible_actions.map { minValue(state: game.perform(action: $0, at: state), depth: 0.5) }
-            let joined = zip(possible_actions, values)
+            let state_copy = state
+            let values = sorted_actions.map { minValue(state: game.perform(action: $0, at: state_copy), depth: 0.5) }
+            let joined = zip(sorted_actions, values)
             
             if (!halt) {
-                let sorted_actions = joined.sorted(by: { $0.1 > $1.1 })
-                possible_actions = sorted_actions.map({ $0.0 })
+                let sorted_actions_values = joined.sorted(by: { $0.1 > $1.1 })
+                sorted_actions = sorted_actions_values.map({ $0.0 })
                 depth_limit += 1
             }
         }
@@ -71,10 +70,11 @@ struct AlphaBetaPlayer<G: GameProtocol> {
         }
         
         var value = -Double.infinity
-        let actions = game.getPossibleActions(at: state)
+        let state_copy = state
+        let actions = game.getPossibleActions(at: state_copy)
         
         for action in actions {
-            let action_value = minValue(state: game.perform(action: action, at: state), depth: depth + 0.5)
+            let action_value = minValue(state: game.perform(action: action, at: state_copy), depth: depth + 0.5)
             value = max(action_value, value)
             
             if value >= beta {
@@ -98,10 +98,11 @@ struct AlphaBetaPlayer<G: GameProtocol> {
         }
         
         var value = Double.infinity
-        let actions = game.getPossibleActions(at: state)
+        let state_copy = state
+        let actions = game.getPossibleActions(at: state_copy)
         
         for action in actions {
-            let action_value = maxValue(state: game.perform(action: action, at: state), depth: depth + 0.5)
+            let action_value = maxValue(state: game.perform(action: action, at: state_copy), depth: depth + 0.5)
             value = min(action_value, value)
             
             if value <= alpha {
@@ -115,8 +116,8 @@ struct AlphaBetaPlayer<G: GameProtocol> {
     }
     
     mutating private func cutoffTest(state: G.State, depth: Double) -> Bool {
-        if (Date.now.distance(to: start_time) > time_limit) { halt = true }
-        return depth >= depth_limit || game.isGameOver(state: state) || Date.now.distance(to: start_time) > time_limit
+        if (start_time.distance(to: Date.now) > time_limit) { halt = true }
+        return depth >= depth_limit || game.isGameOver(state: state) || halt
     }
     
 }
