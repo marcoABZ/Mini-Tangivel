@@ -13,6 +13,7 @@ class ConnectFourViewModel: ObservableObject {
     private var player_1: ConnectFourPlayer
     private var player_2: ConnectFourPlayer
     private var next_player: ConnectFourPlayer
+    private var peripheral: PeripheralViewModel
     
     @Published private(set) var currentGameState: ConnectFourState {
         didSet {
@@ -22,6 +23,7 @@ class ConnectFourViewModel: ObservableObject {
                     let selected_action = player.selectAction(at: currentGameState, from: possible_actions)
                     next_player = currentGameState.move_count % 2 == 0 ? player_2 : player_1
                     currentGameState = game.perform(action: selected_action, at: currentGameState)
+                    peripheral.send(selected_action.column, color: UIColor.red)
                 }
             }
         }
@@ -33,6 +35,9 @@ class ConnectFourViewModel: ObservableObject {
         self.player_1 = player_1
         self.player_2 = player_2
         self.next_player = player_1
+        self.peripheral = PeripheralViewModel()
+        peripheral.delegate = self
+        connect()
     }
     
     func startGame() {
@@ -43,6 +48,7 @@ class ConnectFourViewModel: ObservableObject {
             let selected_action = player.selectAction(at: currentGameState, from: possible_actions)
             next_player = currentGameState.move_count % 2 == 0 ? player_2 : player_1
             currentGameState = game.perform(action: selected_action, at: currentGameState)
+            peripheral.send(selected_action.column, color: UIColor.red)
         }
     }
     
@@ -61,5 +67,20 @@ class ConnectFourViewModel: ObservableObject {
         game = ConnectFour(board_width: 8, board_height: 8)
         next_player = player_1
         currentGameState = game.initial_state
+        peripheral.send(9, color: UIColor.white)
+    }
+}
+
+extension ConnectFourViewModel: PeripheralViewModelDelegate {
+    
+    func handleClick(at row: Int) {
+        next_player = currentGameState.move_count % 2 == 0 ? player_2 : player_1
+        currentGameState = game.perform(action: ConnectFourAction(column: row), at: currentGameState)
+        print(currentGameState.move_count)
+        print(next_player)
+    }
+    
+    func connect() {
+        peripheral.connectCalculator()
     }
 }

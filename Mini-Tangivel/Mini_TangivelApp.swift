@@ -16,8 +16,8 @@ struct Mini_TangivelApp: App {
     
     init() {
         game = ConnectFour(board_width: 8, board_height: 8)
-        player1 = AlphaBetaConnectFourPlayer(game: game)
-        player2 = RealConnectFourPlayer(game: game)
+        player2 = AlphaBetaConnectFourPlayer(game: game)
+        player1 = RealConnectFourPlayer(game: game)
     }
 
     

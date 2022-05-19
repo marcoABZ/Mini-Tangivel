@@ -21,6 +21,8 @@
 		FA616D10282DB46000EB3B62 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D0F282DB46000EB3B62 /* GameProtocol.swift */; };
 		FA616D12282DB56500EB3B62 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D11282DB56500EB3B62 /* Game.swift */; };
 		FA616D14282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */; };
+		FA7B1AA32833408C00542BC4 /* PeripheralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B1AA22833408C00542BC4 /* PeripheralViewModel.swift */; };
+		FA7B1AA8283341A300542BC4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B1AA7283341A300542BC4 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		FA616D0F282DB46000EB3B62 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		FA616D11282DB56500EB3B62 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAlphaBetaPlayer.swift; sourceTree = "<group>"; };
+		FA7B1AA22833408C00542BC4 /* PeripheralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralViewModel.swift; sourceTree = "<group>"; };
+		FA7B1AA7283341A300542BC4 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 		FA30D32C2831695600EA2BAF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FA7B1AA42833409700542BC4 /* BLE Connection */,
 				FA30D32E2831697F00EA2BAF /* ConnectFourViewModel.swift */,
 			);
 			path = ViewModel;
@@ -100,6 +105,7 @@
 		FA616CFF282DB43A00EB3B62 /* Mini-Tangivel */ = {
 			isa = PBXGroup;
 			children = (
+				FA7B1AA52833418B00542BC4 /* Utils */,
 				FA616D0E282DB44E00EB3B62 /* Model */,
 				FA30D32D2831696100EA2BAF /* View */,
 				FA30D32C2831695600EA2BAF /* ViewModel */,
@@ -127,6 +133,30 @@
 				FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FA7B1AA42833409700542BC4 /* BLE Connection */ = {
+			isa = PBXGroup;
+			children = (
+				FA7B1AA22833408C00542BC4 /* PeripheralViewModel.swift */,
+			);
+			path = "BLE Connection";
+			sourceTree = "<group>";
+		};
+		FA7B1AA52833418B00542BC4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FA7B1AA62833419400542BC4 /* UIColor */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FA7B1AA62833419400542BC4 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				FA7B1AA7283341A300542BC4 /* UIColorExtension.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,12 +230,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA330411282EB11F0022F634 /* Action.swift in Sources */,
+				FA7B1AA8283341A300542BC4 /* UIColorExtension.swift in Sources */,
 				FA30D3352831C5E200EA2BAF /* ConnectFourCellView.swift in Sources */,
 				FA33040D282EA9ED0022F634 /* State.swift in Sources */,
 				FA30D3332831C56D00EA2BAF /* ConnectFourGridView.swift in Sources */,
 				FA616D12282DB56500EB3B62 /* Game.swift in Sources */,
 				FA616D10282DB46000EB3B62 /* GameProtocol.swift in Sources */,
 				FA616D03282DB43A00EB3B62 /* ContentView.swift in Sources */,
+				FA7B1AA32833408C00542BC4 /* PeripheralViewModel.swift in Sources */,
 				FA616D14282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift in Sources */,
 				FA30D32F2831697F00EA2BAF /* ConnectFourViewModel.swift in Sources */,
 				FA616D01282DB43A00EB3B62 /* Mini_TangivelApp.swift in Sources */,
@@ -344,6 +376,8 @@
 				DEVELOPMENT_TEAM = 8KLVK79M3G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to connect to the peripheral.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app uses Bluetooth to connect to the peripheral.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -373,6 +407,8 @@
 				DEVELOPMENT_TEAM = 8KLVK79M3G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app uses Bluetooth to connect to the peripheral.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app uses Bluetooth to connect to the peripheral.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

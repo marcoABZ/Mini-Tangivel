@@ -14,7 +14,7 @@ struct AlphaBetaConnectFourPlayer: ConnectFourPlayer {
     init(game: ConnectFour) {
         self.solver = AlphaBetaPlayer<ConnectFour>(game: game) { state in
             if let winner = state.winner {
-                return Double(winner) * 900000.0
+                return -Double(winner) * 900000.0
             }
             
             var sum = 0.0
@@ -29,7 +29,7 @@ struct AlphaBetaConnectFourPlayer: ConnectFourPlayer {
             
             for i in 0..<state.grid.count {
                 for j in 0..<state.grid[i].count {
-                    if state.grid[i][j] == 1 { sum += eval_grid[i][j] }
+                    if state.grid[i][j] == -1 { sum += eval_grid[i][j] }
                 }
             }
             
