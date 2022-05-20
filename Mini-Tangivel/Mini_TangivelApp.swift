@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct Mini_TangivelApp: App {
@@ -15,6 +16,7 @@ struct Mini_TangivelApp: App {
     var player2: ConnectFourPlayer
     
     init() {
+        FirebaseApp.configure()
         game = ConnectFour(board_width: 8, board_height: 8)
         player2 = AlphaBetaConnectFourPlayer(game: game)
         player1 = RealConnectFourPlayer(game: game)
@@ -23,7 +25,8 @@ struct Mini_TangivelApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(gameController: ConnectFourViewModel(game: game, player_1: player1, player_2: player2))
+            MainView()
+//            ContentView(gameController: ConnectFourViewModel(game: game, player_1: player1, player_2: player2))
         }
     }
 }

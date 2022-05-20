@@ -14,6 +14,7 @@
 		FA30D3352831C5E200EA2BAF /* ConnectFourCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D3342831C5E200EA2BAF /* ConnectFourCellView.swift */; };
 		FA33040D282EA9ED0022F634 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA33040C282EA9ED0022F634 /* State.swift */; };
 		FA330411282EB11F0022F634 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA330410282EB11F0022F634 /* Action.swift */; };
+		FA36E9472837A76300A89D3A /* BLEHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36E9462837A76300A89D3A /* BLEHelper.swift */; };
 		FA616D01282DB43A00EB3B62 /* Mini_TangivelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D00282DB43A00EB3B62 /* Mini_TangivelApp.swift */; };
 		FA616D03282DB43A00EB3B62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D02282DB43A00EB3B62 /* ContentView.swift */; };
 		FA616D05282DB43B00EB3B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA616D04282DB43B00EB3B62 /* Assets.xcassets */; };
@@ -23,6 +24,16 @@
 		FA616D14282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */; };
 		FA7B1AA32833408C00542BC4 /* PeripheralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B1AA22833408C00542BC4 /* PeripheralViewModel.swift */; };
 		FA7B1AA8283341A300542BC4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7B1AA7283341A300542BC4 /* UIColorExtension.swift */; };
+		FA8D2C582836B78400FEA299 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D2C572836B78400FEA299 /* FirebaseReference.swift */; };
+		FA8D2C5A2836BC5100FEA299 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8D2C592836BC5100FEA299 /* FirebaseService.swift */; };
+		FAAFAADC2836CD1400DC1472 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FAAFAADB2836CD1400DC1472 /* FirebaseFirestore */; };
+		FAAFAADE2836CD1400DC1472 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = FAAFAADD2836CD1400DC1472 /* FirebaseFirestoreCombine-Community */; };
+		FAAFAAE02836CD1400DC1472 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FAAFAADF2836CD1400DC1472 /* FirebaseFirestoreSwift */; };
+		FAAFAAE22836D2A800DC1472 /* GameRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFAAE12836D2A800DC1472 /* GameRoom.swift */; };
+		FAAFAAE628371C9800DC1472 /* MainView(TEMP-TEST).swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFAAE528371C9800DC1472 /* MainView(TEMP-TEST).swift */; };
+		FAAFAAE828371CE400DC1472 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFAAE728371CE400DC1472 /* RoomViewModel.swift */; };
+		FAAFAAEA28371F9100DC1472 /* RoomView(TEMP-TEST).swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFAAE928371F9100DC1472 /* RoomView(TEMP-TEST).swift */; };
+		FAAFAAEC283720CD00DC1472 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAAFAAEB283720CD00DC1472 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +44,7 @@
 		FA30D3342831C5E200EA2BAF /* ConnectFourCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourCellView.swift; sourceTree = "<group>"; };
 		FA33040C282EA9ED0022F634 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		FA330410282EB11F0022F634 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		FA36E9462837A76300A89D3A /* BLEHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEHelper.swift; sourceTree = "<group>"; };
 		FA616CFD282DB43A00EB3B62 /* Mini-Tangivel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini-Tangivel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA616D00282DB43A00EB3B62 /* Mini_TangivelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini_TangivelApp.swift; sourceTree = "<group>"; };
 		FA616D02282DB43A00EB3B62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +55,13 @@
 		FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAlphaBetaPlayer.swift; sourceTree = "<group>"; };
 		FA7B1AA22833408C00542BC4 /* PeripheralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralViewModel.swift; sourceTree = "<group>"; };
 		FA7B1AA7283341A300542BC4 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		FA8D2C572836B78400FEA299 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		FA8D2C592836BC5100FEA299 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		FAAFAAE12836D2A800DC1472 /* GameRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoom.swift; sourceTree = "<group>"; };
+		FAAFAAE528371C9800DC1472 /* MainView(TEMP-TEST).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView(TEMP-TEST).swift"; sourceTree = "<group>"; };
+		FAAFAAE728371CE400DC1472 /* RoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
+		FAAFAAE928371F9100DC1472 /* RoomView(TEMP-TEST).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoomView(TEMP-TEST).swift"; sourceTree = "<group>"; };
+		FAAFAAEB283720CD00DC1472 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAFAADC2836CD1400DC1472 /* FirebaseFirestore in Frameworks */,
+				FAAFAADE2836CD1400DC1472 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				FAAFAAE02836CD1400DC1472 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +83,7 @@
 			children = (
 				FA7B1AA42833409700542BC4 /* BLE Connection */,
 				FA30D32E2831697F00EA2BAF /* ConnectFourViewModel.swift */,
+				FAAFAAE728371CE400DC1472 /* RoomViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -68,9 +91,9 @@
 		FA30D32D2831696100EA2BAF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA30D33028317A1A00EA2BAF /* ConnectFourView.swift */,
-				FA30D3322831C56D00EA2BAF /* ConnectFourGridView.swift */,
-				FA30D3342831C5E200EA2BAF /* ConnectFourCellView.swift */,
+				FAAFAAE328371C6400DC1472 /* ConnectFour(TEMP) */,
+				FAAFAAE528371C9800DC1472 /* MainView(TEMP-TEST).swift */,
+				FAAFAAE928371F9100DC1472 /* RoomView(TEMP-TEST).swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -86,9 +109,18 @@
 			path = ConnectFour;
 			sourceTree = "<group>";
 		};
+		FA36E9452837A72300A89D3A /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				FA36E9462837A76300A89D3A /* BLEHelper.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
 		FA616CF4282DB43A00EB3B62 = {
 			isa = PBXGroup;
 			children = (
+				FAAFAAEB283720CD00DC1472 /* GoogleService-Info.plist */,
 				FA616CFF282DB43A00EB3B62 /* Mini-Tangivel */,
 				FA616CFE282DB43A00EB3B62 /* Products */,
 			);
@@ -131,6 +163,7 @@
 				FA330412282EB1230022F634 /* ConnectFour */,
 				FA616D0F282DB46000EB3B62 /* GameProtocol.swift */,
 				FA616D13282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift */,
+				FAAFAAE12836D2A800DC1472 /* GameRoom.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +179,8 @@
 		FA7B1AA52833418B00542BC4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FA36E9452837A72300A89D3A /* Bluetooth */,
+				FA8D2C562836B76B00FEA299 /* Firebase */,
 				FA7B1AA62833419400542BC4 /* UIColor */,
 			);
 			path = Utils;
@@ -157,6 +192,25 @@
 				FA7B1AA7283341A300542BC4 /* UIColorExtension.swift */,
 			);
 			path = UIColor;
+			sourceTree = "<group>";
+		};
+		FA8D2C562836B76B00FEA299 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				FA8D2C572836B78400FEA299 /* FirebaseReference.swift */,
+				FA8D2C592836BC5100FEA299 /* FirebaseService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		FAAFAAE328371C6400DC1472 /* ConnectFour(TEMP) */ = {
+			isa = PBXGroup;
+			children = (
+				FA30D33028317A1A00EA2BAF /* ConnectFourView.swift */,
+				FA30D3322831C56D00EA2BAF /* ConnectFourGridView.swift */,
+				FA30D3342831C5E200EA2BAF /* ConnectFourCellView.swift */,
+			);
+			path = "ConnectFour(TEMP)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +229,11 @@
 			dependencies = (
 			);
 			name = "Mini-Tangivel";
+			packageProductDependencies = (
+				FAAFAADB2836CD1400DC1472 /* FirebaseFirestore */,
+				FAAFAADD2836CD1400DC1472 /* FirebaseFirestoreCombine-Community */,
+				FAAFAADF2836CD1400DC1472 /* FirebaseFirestoreSwift */,
+			);
 			productName = "Mini-Tangivel";
 			productReference = FA616CFD282DB43A00EB3B62 /* Mini-Tangivel.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +262,9 @@
 				Base,
 			);
 			mainGroup = FA616CF4282DB43A00EB3B62;
+			packageReferences = (
+				FAAFAADA2836CD1400DC1472 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FA616CFE282DB43A00EB3B62 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -219,6 +281,7 @@
 			files = (
 				FA616D08282DB43B00EB3B62 /* Preview Assets.xcassets in Resources */,
 				FA616D05282DB43B00EB3B62 /* Assets.xcassets in Resources */,
+				FAAFAAEC283720CD00DC1472 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,18 +294,25 @@
 			files = (
 				FA330411282EB11F0022F634 /* Action.swift in Sources */,
 				FA7B1AA8283341A300542BC4 /* UIColorExtension.swift in Sources */,
+				FA8D2C5A2836BC5100FEA299 /* FirebaseService.swift in Sources */,
 				FA30D3352831C5E200EA2BAF /* ConnectFourCellView.swift in Sources */,
 				FA33040D282EA9ED0022F634 /* State.swift in Sources */,
 				FA30D3332831C56D00EA2BAF /* ConnectFourGridView.swift in Sources */,
+				FAAFAAE22836D2A800DC1472 /* GameRoom.swift in Sources */,
 				FA616D12282DB56500EB3B62 /* Game.swift in Sources */,
 				FA616D10282DB46000EB3B62 /* GameProtocol.swift in Sources */,
 				FA616D03282DB43A00EB3B62 /* ContentView.swift in Sources */,
 				FA7B1AA32833408C00542BC4 /* PeripheralViewModel.swift in Sources */,
 				FA616D14282DB57900EB3B62 /* GenericAlphaBetaPlayer.swift in Sources */,
+				FA8D2C582836B78400FEA299 /* FirebaseReference.swift in Sources */,
 				FA30D32F2831697F00EA2BAF /* ConnectFourViewModel.swift in Sources */,
+				FAAFAAE628371C9800DC1472 /* MainView(TEMP-TEST).swift in Sources */,
+				FA36E9472837A76300A89D3A /* BLEHelper.swift in Sources */,
 				FA616D01282DB43A00EB3B62 /* Mini_TangivelApp.swift in Sources */,
 				FA30D32A28314E5F00EA2BAF /* Players.swift in Sources */,
+				FAAFAAEA28371F9100DC1472 /* RoomView(TEMP-TEST).swift in Sources */,
 				FA30D33128317A1A00EA2BAF /* ConnectFourView.swift in Sources */,
+				FAAFAAE828371CE400DC1472 /* RoomViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +519,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAAFAADA2836CD1400DC1472 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAAFAADB2836CD1400DC1472 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAAFAADA2836CD1400DC1472 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		FAAFAADD2836CD1400DC1472 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAAFAADA2836CD1400DC1472 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		FAAFAADF2836CD1400DC1472 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAAFAADA2836CD1400DC1472 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA616CF5282DB43A00EB3B62 /* Project object */;
 }

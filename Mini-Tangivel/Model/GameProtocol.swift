@@ -17,7 +17,7 @@ protocol GameProtocol {
     func isGameOver(state: State) -> Bool
 }
 
-protocol GameState {
+protocol GameState: Codable {
     var hashableRepresentation: AnyHashable { get }
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct ConnectFourView: View {
     
     @ObservedObject var gameViewModel: ConnectFourViewModel
+    @ObservedObject var roomViewModel: RoomViewModel
     
     var body: some View {
         VStack {
